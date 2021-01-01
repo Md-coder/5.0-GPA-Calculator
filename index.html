@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+</head>
+<style>
+    input[submit] {
+        width: 100%;
+    }
+
+    .img {
+        width: 15%;
+    }
+</style>
+
+<body class="bg-dark">
+    <div class="container mx-auto">
+        <div class="row">
+            <div class="col-md-6 mx-auto">
+                <div class="card card-body text-center gp-heading">
+                    <img src="./images/md new logoArtboard 1.svg" alt="" class="img">
+                    <h1 class="heading">GP Calculator</h1>
+                    <form id="calculator">
+                        <div class="form-group mb-2">
+                            <div class="input-group">
+                                <span class="input-group-text">Name</span>
+                                <input type="text" name="" id="name" class="form-control" placeholder="Enter Name">
+                            </div>
+                        </div>
+                        <div class="form-group mb-2">
+                            <div class="input-group">
+                                <span class="input-group-text">Department</span>
+                                <input type="text" name="" id="department" class="form-control"
+                                    placeholder="Enter your department">
+                            </div>
+                        </div>
+                        <div class="form-group mb-2">
+                            <div class="input-group">
+                                <span class="input-group-text">Level</span>
+                                <input type="number" name="" id="level" class="form-control" placeholder="Enter Level">
+                            </div>
+                        </div>
+                        <div class="form-group mb-2">
+                            <div class="input-group">
+                                <span class="input-group-text">No.courses</span>
+                                <input type="number" name="" id="noCourses" class="form-control" placeholder="eg.5">
+                            </div>
+                        </div>
+                        <div class="form-group mb-2">
+                            <input type="submit" value="Submit" class="btn btn-dark btn-block">
+                        </div>
+                        <div id="loading" style="display: none;">
+                            <img src="./images/5 (3).gif" alt="">
+                        </div>
+                    </form>
+
+
+
+                </div>
+            </div>
+        </div>
+
+        <table class="table table-dark" id="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Course</th>
+                    <th scope="col">No.Unit</th>
+                    <th scope="col">Grade</th>
+                </tr>
+            </thead>
+            <tbody id="table-id">
+                <!-- <tr>
+                    <th scope="row">1</th>
+                    <td><input type="text" id="course1" placeholder="eg.EBB 101"></td>
+                    <td><input type="number" id="unit1" placeholder="eg.2"></td>
+                    <td><input type="text" id="grade1" placeholder="A"></td>
+
+
+                </tr> -->
+            </tbody>
+
+        </table>
+        <input type="submit" value="Calculate" id="calculate" class="btn btn-light mx-auto mb-5" style="display: none;">
+        <div id="loading2">
+            <img src="./images/5 (3).gif" alt="" style="margin-left:40%;">
+        </div>
+
+
+
+        <div class="row">
+            <div class="col-md-6 mx-auto">
+                <div class="card card-body text-center results">
+                    <img src="./images/md new logoArtboard 1.svg" alt="" class="img">
+                    <h1 class="resultHeading">GP Results</h1>
+                    <form id="result">
+                        <div class="form-group mb-2">
+                            <div class="input-group">
+                                <span class="input-group-text">Name</span>
+                                <input type="text" name="" id="name-result" class="form-control" disabled>
+                            </div>
+                        </div>
+                        <div class="form-group mb-2">
+                            <div class="input-group">
+                                <span class="input-group-text">Department</span>
+                                <input type="text" name="" id="department-result" class="form-control" disabled>
+                            </div>
+                        </div>
+                        <div class="form-group mb-2">
+                            <div class="input-group">
+                                <span class="input-group-text">Level</span>
+                                <input type="text" name="" id="level-result" class="form-control" disabled>
+                            </div>
+                        </div>
+                        <div class="form-group mb-2">
+                            <div class="input-group">
+                                <span class="input-group-text">GPA</span>
+                                <input type="number" name="" id="gpa" class="form-control" disabled>
+                            </div>
+                        </div>
+                        <div class="form-group mb-2">
+                            <div class="input-group">
+                                <span class="input-group-text">Class</span>
+                                <input type="text" name="" id="class" class="form-control" disabled>
+                            </div>
+                        </div>
+
+                    </form>
+
+
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <input type="submit" value="Refresh" class="btn btn-light" id="refresh" style="margin-left: 40%; margin-top: 10px;">
+
+
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+        crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
+    -->
+    <script src="app.js"></script>
+</body>
+
+</html>
